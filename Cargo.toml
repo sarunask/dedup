@@ -1,0 +1,22 @@
+[package]
+name = "dedup"
+version = "0.1.0"
+edition = "2021"
+authors = [
+	"Sarunas Krisciukaitis <sarunas.krisciukaitis@gmail.com>",
+	"DeDup Maintainers"
+]
+description = "A simple to use, efficient, and full-featured deduplication tool"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = "0.4.17"
+simple_logger = "4.0.0"
+stderrlog = "0.5"
+walkdir = "2"
+ahash = "0.8.3"
+checksum = "0.2"
+
+[profile.release]
+panic = 'abort'

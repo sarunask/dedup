@@ -1,6 +1,6 @@
 use ahash::AHashMap;
 use checksum::crc::Crc as crc;
-use log::{debug};
+use log::debug;
 use std::{
     collections::hash_map::Entry::{Occupied, Vacant},
     error::Error,

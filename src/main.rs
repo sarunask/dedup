@@ -1,6 +1,6 @@
 mod dedup_logic;
 
-use std::{env, error::Error, str::FromStr};
+use std::{env, error::Error, str::FromStr, time::Instant};
 
 fn help() -> Result<(), Box<dyn Error>> {
     println!("Usage:");
@@ -24,6 +24,9 @@ fn main() -> Result<(), Box<dyn Error>> {
     }
     set_log_level()?;
     // Run main logic
+    let scan_start = Instant::now();
     dedup_logic::run(args[1].trim().to_string())?;
+    let scan_duration = scan_start.elapsed();
+    println!("Time elapsed: {scan_duration:?}");
     Ok(())
 }
